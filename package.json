@@ -18,6 +18,7 @@
     "build:lib": "rm -rf dist/lib/* && babel lib -d dist/lib -D --compact --no-comments",
     "build:bin": "rm -rf dist/bin/* && babel bin -d dist/bin -D --compact --no-comments",
     "build": "npm run build:lib && npm run build:bin",
+    "prepare": "npm run build:lib && npm run build:bin",
     "report:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "preversion": "npm run test:standard && npm test",
     "version": "npm run build",
